@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EasyHealth</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- BOOTSTRAP THEME -->
+
+  <!-- CUSTOM STYLES -->
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">EasyHealth</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/uploaddocs">Medical Documents</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/features">Information</a>
+            </li>
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </div>
+      </nav>
+
+  <!-- HERO -->
+  <div class="jumbotron text-center hero-background-img" id="secondImage">
+    <h1 class = "text-white">Medical Documents</h1>
+  </div>
+
+  {% set loopCounter = 0 %}
+
+  <!-- CALL TO ACTION -->
+  <div class="jumbotron text-center mb-0">
+    {% block content %}
+        {% for sample in sampleData %}
+        {% set loopCounter = loopCounter + 1 %}
+
+        <div class="col-md-3">
+            <h3>{{sample}}</h3>
+            <!-- Button trigger modal -->
+            <img src="standardKeyboard.jpg" class="img-fluid rounded">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              View Document
+            </button>
+      
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mechanical Keyboard</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Medical Document
+                  </div>
+      
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Download</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            {% if loopCounter%3 == 0 %}
+            <div class="row m-5">
+            </div>
+
+            {% endif %}
+
+      
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+    <p class="lead mb-4 p-3">Get notified about updates and more!</p>
+    <div class="d-flex justify-content-center">
+      <form action="#" class='form-inline'>
+        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Email"/>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="bg-secondary p-5 text">
+    <div class="row">
+      <div class="col-lg-2">
+        <p class = "h6">What's New</p>
+        <p>2020 CustomKeys</p>
+
+      </div>
+
+      <div class="col-lg-2">
+          <p class = "h6">Facebook</p>
+          <img src="fblogo.png" class="img-fluid rounded" id = "smallIcon">
+
+      </div>
+      <div class="col-lg-2">
+        <p class = "h6">Instagram</p>
+        <img src="instalogo.png" class="img-fluid rounded" id = "smallIcon">
+
+      </div>
+      <div class="col-lg-2">
+        <p class = "h6">Twitter</p>
+        <img src="twitterlogo.png" class="img-fluid rounded" id = "smallIcon">
+
+      </div>
+      <div class="col-lg-2">
+        <p class = "h6">YouTube</p>
+        <img src="ytlogo.png" class="img-fluid rounded" id = "smallIcon">
+
+      </div>
+      <div class="col-lg-2">
+        <p class = "h6">Company</p>
+        <p>Careers</p>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+</html>
