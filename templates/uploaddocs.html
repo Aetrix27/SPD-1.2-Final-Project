@@ -1,3 +1,5 @@
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,58 +50,52 @@
 
   <!-- HERO -->
   <div class="jumbotron text-center hero-background-img" id="secondImage">
-    <h1 class = "text-white">Medical Documents</h1>
+    <h1 class = "text-dark">Get or Send Medical Documents</h1>
   </div>
 
-  {% set loopCounter = 0 %}
-
   <!-- CALL TO ACTION -->
-  <div class="jumbotron text-center mb-0">
-    {% block content %}
-        {% for sample in sampleData %}
-        {% set loopCounter = loopCounter + 1 %}
+<div class="jumbotron text-center mb-0">
+{% set dev = namespace(value=0) %}
 
-        <div class="col-md-3">
-            <h3>{{sample}}</h3>
-            <!-- Button trigger modal -->
-            <img src="standardKeyboard.jpg" class="img-fluid rounded">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              View Document
-            </button>
-      
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Mechanical Keyboard</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Medical Document
-                  </div>
-      
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Download</button>
+{% for row in range(2) %}
+    <div class="row m-5">        
+    {% for col in range(3) %}
+      {% set dev.value = dev.value + 1 %}
+
+        <div class="col card mb-4 md-2">
+                <p>{{sampleData[dev.value-1]}}</p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                View Document
+                </button>
+                <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Mechanical Keyboard</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          {{sampleData[dev.value-1]}}
+                        </div>
+            
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Download</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-      
-            {% if loopCounter%3 == 0 %}
-            <div class="row m-5">
-            </div>
-
-            {% endif %}
-
-      
-        {% endfor %}
+    {% endfor %}
     </div>
 
-    {% endblock %}
+{% endfor %}
+
+
     <p class="lead mb-4 p-3">Get notified about updates and more!</p>
     <div class="d-flex justify-content-center">
       <form action="#" class='form-inline'>
@@ -107,6 +103,7 @@
         <button type="submit" class="btn btn-primary mb-2">Submit</button>
       </form>
     </div>
+    
   </div>
 
   <!-- FOOTER -->
@@ -150,3 +147,4 @@
 
 </body>
 </html>
+{% endblock %}

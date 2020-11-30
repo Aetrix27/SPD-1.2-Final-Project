@@ -32,10 +32,13 @@ def home():
 def uploaddocs():
     """Displays the homepage with forms for current or historical data."""
 
-    sampleData = ["This is Medical Document 1", "This is Medical Document 2"]
-
+    sampleData = ["This is Medical Document 1", "This is Medical Document 2", 
+                "This is Medical Document 3", "This is Medical Document 4", 
+                "This is Medical Document 5", "This is Medical Document 6"]
+    counter = 0 
     context = {
-        'sampleData' : sampleData
+        'sampleData' : sampleData,
+        'counter' : counter
     }
 
     return render_template('uploaddocs.html', **context)
