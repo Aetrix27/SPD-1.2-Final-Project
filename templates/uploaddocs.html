@@ -42,16 +42,25 @@
               <a class="nav-link" href="/features">Information</a>
             </li>
           </ul>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
+          <a class="nav-link text-dark" href="#">Login</a>
+
         </div>
       </nav>
 
   <!-- HERO -->
   <div class="jumbotron text-center hero-background-img" id="secondImage">
     <h1 class = "text-dark">Get or Send Medical Documents</h1>
+    
   </div>
+
+<form class="md-form">
+  <div class="file-field">
+    <div class="btn btn-primary btn-sm float-center col-lg-6">
+      <input type="file">
+    </div>
+
+  </div>
+</form>
 
   <!-- CALL TO ACTION -->
 <div class="jumbotron text-center mb-0">
@@ -62,14 +71,14 @@
     {% for col in range(3) %}
       {% set dev.value = dev.value + 1 %}
 
-        <div class="col card mb-4 md-2">
-                <p>{{sampleData[dev.value-1]}}</p>
+        <div class="col card mb-4 md-2 m-5 lg-6">
+                <p>{{sampleDataTitle[dev.value-1]}}</p>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{dev.value}}">
                 View Document
                 </button>
                 <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="{{dev.value}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -90,18 +99,17 @@
                     </div>
                   </div>
                 </div>
+                
     {% endfor %}
     </div>
 
 {% endfor %}
 
-
-    <p class="lead mb-4 p-3">Get notified about updates and more!</p>
+    <p class="lead mb-4 p-3">Send Selected Document</p>
     <div class="d-flex justify-content-center">
-      <form action="#" class='form-inline'>
-        <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Email"/>
-        <button type="submit" class="btn btn-primary mb-2">Submit</button>
-      </form>
+      <p class="lead mb-4 p-3">Send Doctor a Message</p>
+      <input type="text" class="form-control mb-2 mr-sm-2">
+  
     </div>
     
   </div>
