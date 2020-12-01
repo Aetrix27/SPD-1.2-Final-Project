@@ -53,17 +53,15 @@
     
   </div>
 
-<form class="md-form">
-  <div class="file-field">
-    <div class="btn btn-primary btn-sm float-center col-lg-6">
+
+<div class="container mb-5 mt-5">
+    <div class="file-field d-flex justify-content-center p-3">
+    <div class="btn btn-primary ">
       <input type="file">
     </div>
-
+  
   </div>
-</form>
-
-  <!-- CALL TO ACTION -->
-<div class="jumbotron text-center mb-0">
+  
 {% set dev = namespace(value=0) %}
 
 {% for row in range(2) %}
@@ -105,9 +103,9 @@
 
 {% endfor %}
 
-    <p class="lead mb-4 p-3">Send Selected Document</p>
+    <h3 class="lead text-center p-3">Send Selected Document</h3>
+    <h3 class="lead text-center p-3">Send Doctor a Message</h3>
     <div class="d-flex justify-content-center">
-      <p class="lead mb-4 p-3">Send Doctor a Message</p>
       <input type="text" class="form-control mb-2 mr-sm-2">
   
     </div>
