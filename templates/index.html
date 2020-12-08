@@ -10,18 +10,18 @@
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-
   <!-- BOOTSTRAP THEME (Downloaded from Themes website)-->
   <link rel="stylesheet" href="bootstrap.min.css">
 
   <!-- CUSTOM STYLES -->
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
   <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand text-light" href="/">EasyHealth</a>
+        <a class="navbar-brand text-white" href="/">EasyHealth</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,8 +44,8 @@
       </nav>
 
 <!-- HERO -->
-<div class="jumbotron text-center">
-  <h1 class = "text-dark">Welcome to EasyHealth!</h1>
+<div class="jumbotron text-center hero-background-img">
+  <h1 class = "text-info">Welcome to EasyHealth!</h1>
 </div>
 
 <!-- BENEFITS -->
@@ -55,24 +55,26 @@
     <div class="jumbotron text-center bg-light">
       <h3 class = "m2">Message Your Personal Doctor Instantly</h3>
     </div>
-    <img src="medical.jpeg" class="img-fluid"></img>
    
-    <div class>
-        <h2 class = "text-center"> A revolutionary change to an ancient system of communicating with your doctor.</h1>
+    <div class="row text-center"> 
+        <h2> A revolutionary change to an ancient system of communicating with your doctor.</h2>
+          <div class="container">
+              <img src="{{ url_for('static', filename='healthData.jpeg') }}" id = "bigPicture"></img>
+            </div>
+          </div>
     </div>
  
 </div>
 
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center ">
     <h2 class = "p-3"> Send Medical Documents Before a Checkup</h2>
     <div class="row m-5">
       <div class="col-lg-6">
-
+        <img src="{{ url_for('static', filename='medical.jpeg') }}" id = "bigPicture"></img>
       </div>
       <div class="col-lg-6">
           <h3> Download our App Now!</h3>
           <a href="" class="btn btn-primary bg-info">Download ></a>
-
       </div>
 
     </div>
@@ -93,38 +95,39 @@
   <div class="bg-secondary p-5 text">
     <div class="row">
       <div class="col-lg-2">
-        <p class = "h6 text-light">What's New</p>
-        <p class = "text-light">Website and App</p>
+        <p class = "h6 text-dark">What's New</p>
+        <p class = "text-dark">Website and App</p>
       </div>
 
       <div class="col-lg-2">
-          <p class = "h6 text-light">Facebook</p>
-          <img src="fblogo.png" class="img-fluid rounded" id = "smallIcon">
+          <p class = "h6 text-dark">Facebook</p>
+          <img src="{{ url_for('static', filename='fblogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Instagram</p>
-        <img src="instalogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">Instagram</p>
+        <img src="{{ url_for('static', filename='instalogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Twitter</p>
-        <img src="twitterlogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">Twitter</p>
+        <img src="{{ url_for('static', filename='twitterlogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">YouTube</p>
-        <img src="ytlogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">YouTube</p>
+        <img src="{{ url_for('static', filename='ytlogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Company</p>
+        <p class = "h6 text-dark">Company</p>
         <a class = "h6" href="#">Join Us!</p>
 
       </div>
 
     </div>
   </div>
+
 
 </body>
 </html>

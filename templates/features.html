@@ -1,3 +1,5 @@
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +19,13 @@
   <!-- BOOTSTRAP THEME -->
 
   <!-- CUSTOM STYLES -->
-
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand text-light" href="/">EasyHealth</a>
+    <a class="navbar-brand text-white" href="/">EasyHealth</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -47,8 +49,8 @@
 
 
   <!-- HERO -->
-  <div class="jumbotron text-center hero-background-img" id="secondImage">
-      <h1 class = "text-dark">Information</h1>
+  <div class="jumbotron text-center hero-background-img">
+      <h1 class = "text-info hero-background-img">Information</h1>
     </div>
     <div class = "text-center">
         <h2 class = "btn-center btn btn-link">Support us by Contributing $5 or more</h2>
@@ -56,8 +58,14 @@
     <div class="container mb-5 mt-5">
       <h1 class = "p-3 text-center"> Contact your local health office and setup</h1>
       <h2 class = "p-3 text-center"> Search for Office and Send Medical Documents</h2>
+      <div class="row text-center"> 
+          <div class="container">
+              <img src="{{ url_for('static', filename='easyHealth.jpeg') }}" id = "sensor"></img>
+            </div>
+          </div>
     </div>
-  <div class="jumbotron text-center hero-background-img">
+    </div>
+  <div class="jumbotron text-center">
     <div class="row m-5">
       <div class="col lg-6">
       <form action="#">
@@ -89,32 +97,32 @@
    <div class="bg-secondary p-5 text">
     <div class="row">
       <div class="col-lg-2">
-        <p class = "h6 text-light">What's New</p>
-        <p class = "text-light">Website and App</p>
+        <p class = "h6 text-dark">What's New</p>
+        <p class = "text-dark">Website and App</p>
       </div>
 
       <div class="col-lg-2">
-          <p class = "h6 text-light">Facebook</p>
-          <img src="fblogo.png" class="img-fluid rounded" id = "smallIcon">
+          <p class = "h6 text-dark">Facebook</p>
+          <img src="{{ url_for('static', filename='fblogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Instagram</p>
-        <img src="instalogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">Instagram</p>
+        <img src="{{ url_for('static', filename='instalogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Twitter</p>
-        <img src="twitterlogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">Twitter</p>
+        <img src="{{ url_for('static', filename='twitterlogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">YouTube</p>
-        <img src="ytlogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">YouTube</p>
+        <img src="{{ url_for('static', filename='ytlogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Company</p>
+        <p class = "h6 text-dark">Company</p>
         <a class = "h6" href="#">Join Us!</p>
 
       </div>
@@ -125,3 +133,5 @@
 
 </body>
 </html>
+
+{% endblock %}

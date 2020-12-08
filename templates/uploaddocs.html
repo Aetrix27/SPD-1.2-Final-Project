@@ -11,7 +11,6 @@
 
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -19,13 +18,13 @@
   <!-- BOOTSTRAP THEME -->
 
   <!-- CUSTOM STYLES -->
-
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand text-light" href="/">EasyHealth</a>
+    <a class="navbar-brand text-white" href="/">EasyHealth</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,8 +48,8 @@
 
 
   <!-- HERO -->
-  <div class="jumbotron text-center hero-background-img" id="secondImage">
-    <h1 class = "text-dark">Get or Send Medical Documents</h1>
+  <div class="jumbotron text-center" id="secondImage">
+    <h1 class = "text-info">Get or Send Medical Documents</h1>
     
   </div>
 
@@ -104,13 +103,14 @@
 
 {% endfor %}
 
-    <div class = "text-center">
-      <h2 class = "btn-center btn btn-link">Send Selected Document</h2>
-    </div>
     <h3 class="lead text-center p-3">Send Doctor a Message</h3>
     <div class="d-flex justify-content-center">
       <input type="text" class="form-control mb-2 mr-sm-2">
   
+    </div>
+
+    <div class = "text-center">
+      <h2 class = "btn-center btn btn-link">Send To Doctor</h2>
     </div>
     
   </div>
@@ -119,38 +119,39 @@
    <div class="bg-secondary p-5 text">
     <div class="row">
       <div class="col-lg-2">
-        <p class = "h6 text-light">What's New</p>
-        <p class = "text-light">Website and App</p>
+        <p class = "h6 text-dark">What's New</p>
+        <p class = "text-dark">Website and App</p>
       </div>
 
       <div class="col-lg-2">
-          <p class = "h6 text-light">Facebook</p>
-          <img src="fblogo.png" class="img-fluid rounded" id = "smallIcon">
+          <p class = "h6 text-dark">Facebook</p>
+          <img src="{{ url_for('static', filename='fblogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Instagram</p>
-        <img src="instalogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">Instagram</p>
+        <img src="{{ url_for('static', filename='instalogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Twitter</p>
-        <img src="twitterlogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">Twitter</p>
+        <img src="{{ url_for('static', filename='twitterlogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">YouTube</p>
-        <img src="ytlogo.png" class="img-fluid rounded" id = "smallIcon">
+        <p class = "h6 text-dark">YouTube</p>
+        <img src="{{ url_for('static', filename='ytlogo.png') }}" class="img-fluid rounded" id = "smallIcon">
 
       </div>
       <div class="col-lg-2">
-        <p class = "h6 text-light">Company</p>
+        <p class = "h6 text-dark">Company</p>
         <a class = "h6" href="#">Join Us!</p>
 
       </div>
 
     </div>
   </div>
+
 
 
 </body>

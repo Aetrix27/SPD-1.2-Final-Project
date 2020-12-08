@@ -1,0 +1,28 @@
+#medicalDoc{
+
+    border: 1px
+}
+
+
+.hero-background-img {
+    position: relative;
+    background-image: url("typer.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+  }
+  
+#smallIcon{
+    width: 50px;
+    height: 50px;
+}
+
+#sensor{
+    width: 300px;
+    height: 500px;
+}
+
+#bigPicture{
+    width: 500px;
+    height:300px;
+}
